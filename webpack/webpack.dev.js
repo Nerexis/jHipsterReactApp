@@ -13,7 +13,7 @@ const commonConfig = require('./webpack.common.js');
 
 const ENV = 'development';
 
-module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
+module.exports = (options) => webpackMerge(commonConfig({env: ENV}), {
   devtool: 'cheap-module-source-map', // https://reactjs.org/docs/cross-origin-errors.html
   mode: ENV,
   entry: [
@@ -25,14 +25,24 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
     filename: 'app/[name].bundle.js',
     chunkFilename: 'app/[id].chunk.js'
   },
+
+
   module: {
     rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader"
+          }
+        }
+      ,
       {
         test: /\.(sa|sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'postcss-loader', {
-            loader: 'sass-loader',
-            options: { implementation: sass }
-          }
+          loader: 'sass-loader',
+          options: {implementation: sass}
+        }
         ]
       },
     ]
@@ -53,7 +63,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
       ],
       target: 'http://127.0.0.1:8080',
       secure: false,
-      headers: { host: 'localhost:9000' }
+      headers: {host: 'localhost:9000'}
     }],
     watchOptions: {
       ignored: /node_modules/

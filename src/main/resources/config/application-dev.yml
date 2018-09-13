@@ -34,7 +34,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:postgresql://localhost:5432/jhipsterReactApp
         username: jhipsterReactApp
-        password:
+        password: 1234
         hikari:
             auto-commit: false
     jpa:
