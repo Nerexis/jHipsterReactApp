@@ -29,13 +29,13 @@ class App extends React.Component {
           <div className="col">
             <ContentRow>
               <ContentBox>
-                dupa
+                1
               </ContentBox>
               <ContentBox>
-                dupa
+                2
               </ContentBox>
               <ContentBox>
-                dupa
+                3
               </ContentBox>
             </ContentRow>
           </div>

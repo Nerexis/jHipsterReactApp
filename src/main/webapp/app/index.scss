@@ -2,6 +2,11 @@
   height: 100%;
 }
 
+#content-view {
+  padding: 0px;
+  margin: 0px;
+}
+
 .box {
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px 1px;
   background-color: #3c3f41;
@@ -11,12 +16,16 @@
 }
 
 .navbar {
-  box-shadow: black 0 0 20px 1px;
+  box-shadow: rgba(0, 0, 0, 0.75) 0 0 20px 1px;
 }
 
 .box > li {
   background-color: #3c3f41;
   color: white;
+}
+
+.content-row {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
 }
 
 .content-box {
