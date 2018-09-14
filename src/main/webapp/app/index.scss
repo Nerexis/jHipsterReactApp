@@ -1,8 +1,37 @@
-.jakisdiv {
+#root {
+  height: 100%;
+}
+
+.box {
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px 1px;
+  background-color: #3c3f41;
+  border-radius: 0px 0px 10px 10px;
+  color: white;
+  border-top: 1px solid red;
+}
+
+.navbar {
+  box-shadow: black 0 0 20px 1px;
+}
+
+.box > li {
+  background-color: #3c3f41;
+  color: white;
+}
+
+.content-box {
   margin: 20px;
   padding: 50px;
-  box-shadow: black 0 0 10px 1px;
-  background-color: rgba(9, 86, 255, 0.44);
-  border-radius: 10px;
-  color: #cb4c58;
+  display: table;
+}
+
+.sidebar-left {
+  text-align: center;
+  border: 1px black;
+  padding-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 10px 1px;
+}
+
+.sidebar-left a {
+  color: grey;
 }

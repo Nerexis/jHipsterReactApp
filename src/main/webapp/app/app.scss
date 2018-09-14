@@ -1,15 +1,25 @@
 // Override Boostrap variables
 @import 'bootstrap-variables';
-// Import Bootstrap source files from node_modules
-@import 'node_modules/bootstrap/scss/bootstrap';
+html {
+  height: 100%;
+}
 body {
-  background: #fafafa;
+  height: 100%;
+  //background: #2b2b2b;
+  background: #7f7f7f;
   margin: 0;
 }
 
 a {
-  color: #533f03;
   font-weight: bold;
+  color: white;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 * {

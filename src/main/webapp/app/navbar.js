@@ -4,18 +4,30 @@ import React from 'react';
 //   alert('test: ' + e.name);
 // };
 
-const Navbar = (brandName, {menuItems}) => {
+const Navbar = (props) => {
   return (
-    <div className={'navbar'}>
-      <h3>{brandName}</h3>
-      <ul>
-        {
-          menuItems.map((item, idx) =>
-            <li key={idx}>{item.id} : {item.name}</li>
-          )
-        }
-      </ul>
-    </div>
+    <nav className={'navbar navbar-expand-lg navbar-dark bg-dark sticky-top'}>
+      <div className={'container-fluid'}>
+        <div className={'navbar-header'}>
+            <a href={'#'} className={'navbar-brand'}>{props.brandName}</a>
+        </div>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className={'collapse navbar-collapse'} id="navbarNav">
+          <ul className={'navbar-nav nav-pills'}>
+            {
+              props.menuItems.map((item, idx) =>
+                <li className={'nav-item'} key={idx}>
+                  <a href={'#'} className={'nav-link'}>{item.name}</a>
+                </li>
+              )
+            }
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 
