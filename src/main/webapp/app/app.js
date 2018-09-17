@@ -3,8 +3,9 @@ import './app.scss';
 import React from 'react';
 import Navbar from './navbar';
 import Sidebar from "./sidebar";
-import ContentBox from "./content-box";
-import ContentRow from "./content-row";
+import {HashRouter} from "react-router-dom";
+import Dashboard from "./dashboard";
+import ViewRoutes from "./view-routes";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,35 +14,24 @@ class App extends React.Component {
     this.state = {
       brandName: 'NiceBrand',
       menuItems: [
-        {id: 1, name: 'Link 1'},
-        {id: 2, name: 'Link 2'},
-        {id: 3, name: 'Link 3'}
+        {id: 1, name: 'Dashboard', link: '/dashboard'},
+        {id: 2, name: 'Add link', link: '/addLink'},
+        {id: 3, name: 'Posts', link: '/posts'}
       ]
     };
   }
 
   render() {
     return (
-      <React.Fragment>
-        <Navbar brandName={this.state.brandName} menuItems={this.state.menuItems}/>
-        <div className="container-fluid h-100 row" id={'content-view'}>
-          <Sidebar links={this.state.menuItems}/>
-          <div className="col">
-            <ContentRow>
-              <ContentBox>
-                1
-              </ContentBox>
-              <ContentBox>
-                2
-              </ContentBox>
-              <ContentBox>
-                3
-              </ContentBox>
-            </ContentRow>
+      <HashRouter>
+        <React.Fragment>
+          <Navbar brandName={this.state.brandName} menuItems={this.state.menuItems}/>
+          <div className="container-fluid row" id={'content-view'}>
+            <Sidebar links={this.state.menuItems}/>
+            <ViewRoutes/>
           </div>
-        </div>
-
-      </React.Fragment>
+        </React.Fragment>
+      </HashRouter>
     );
   }
 }

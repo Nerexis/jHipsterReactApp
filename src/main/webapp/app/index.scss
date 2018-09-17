@@ -38,9 +38,15 @@
   text-align: center;
   border: 1px black;
   padding-top: 20px;
+  padding-bottom: 20px;
   box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 10px 1px;
+  height: fit-content;
 }
 
 .sidebar-left a {
   color: grey;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #ee0000;
 }
