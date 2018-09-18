@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 class AddLink extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>

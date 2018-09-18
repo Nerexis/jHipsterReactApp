@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom";
 // };
 
 const Navbar = (props) => {
-  return <nav className={'navbar navbar-expand-lg navbar-dark bg-dark sticky-top'}>
+  return <nav className={'navbar navbar-expand-lg navbar-dark bg-dark fixed-top'}>
     <div className={'container-fluid'}>
       <div className={'navbar-header'}>
         <a href={'/'} className={'navbar-brand'}>{props.brandName}</a>
@@ -25,6 +25,9 @@ const Navbar = (props) => {
             )
           }
         </ul>
+      </div>
+      <div>
+        <a href='#' id={'backToTop'}>Scroll Top</a>
       </div>
     </div>
   </nav>;

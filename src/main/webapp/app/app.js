@@ -2,9 +2,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import './app.scss';
 import React from 'react';
 import Navbar from './navbar';
-import Sidebar from "./sidebar";
+import DashboardSidebar from "./components/views/dashboard-sidebar";
 import {HashRouter} from "react-router-dom";
-import Dashboard from "./dashboard";
+import Dashboard from "./components/views/dashboard";
 import ViewRoutes from "./view-routes";
 
 class App extends React.Component {
@@ -16,7 +16,8 @@ class App extends React.Component {
       menuItems: [
         {id: 1, name: 'Dashboard', link: '/dashboard'},
         {id: 2, name: 'Add link', link: '/addLink'},
-        {id: 3, name: 'Posts', link: '/posts'}
+        {id: 3, name: 'Posts', link: '/posts'},
+        {id: 4, name: 'New data source', link: '/newDataSource/true'}
       ]
     };
   }
@@ -26,10 +27,7 @@ class App extends React.Component {
       <HashRouter>
         <React.Fragment>
           <Navbar brandName={this.state.brandName} menuItems={this.state.menuItems}/>
-          <div className="container-fluid row" id={'content-view'}>
-            <Sidebar links={this.state.menuItems}/>
-            <ViewRoutes/>
-          </div>
+          <ViewRoutes/>
         </React.Fragment>
       </HashRouter>
     );
