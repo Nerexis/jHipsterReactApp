@@ -1,5 +1,5 @@
 import React from 'react';
-import AddDataSourceButton from "../forms/adddatasource/add-data-source-button";
+import AddDataSourceButton from "../forms/datasource/add-data-source-button";
 import Sidebar from "../navigation/sidebar";
 
 const DashboardSidebar = () => {

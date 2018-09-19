@@ -2,8 +2,12 @@ import React from 'react';
 import ContentRow from "../../content-row";
 import ContentBox from "../../content-box";
 import DashboardSidebar from "./dashboard-sidebar";
+import {connect} from 'react-redux';
 
 class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <React.Fragment>
@@ -11,22 +15,27 @@ class Dashboard extends React.Component {
           <DashboardSidebar/>
           <div className="col">
             <ContentRow>
-              <ContentBox>1</ContentBox>
-              <ContentBox>2</ContentBox>
-              <ContentBox>3</ContentBox>
-            </ContentRow>
-            <ContentRow>
-              <ContentBox>1</ContentBox>
-              <ContentBox>2</ContentBox>
-              <ContentBox>3</ContentBox>
+              {
+                this.props.dataSources.map( (item, index) =>
+                     <ContentBox key={index}>
+                       <h1>{item.name}</h1>
+                       <h2>{item.url}</h2>
+                       <h3>{item.xpath}</h3>
+                     </ContentBox>
+                )
+              }
             </ContentRow>
           </div>
-
-
         </div>
       </React.Fragment>
     );
   };
 };
 
-export default Dashboard;
+const mapStateToProps = (state) => {
+  return {
+    dataSources: state.dataSources
+  };
+}
+
+export default connect(mapStateToProps)(Dashboard);

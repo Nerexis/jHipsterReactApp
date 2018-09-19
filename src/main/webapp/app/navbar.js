@@ -1,10 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-// handleOnHover = (e) => {
-//   alert('test: ' + e.name);
-// };
-
 const Navbar = (props) => {
   return <nav className={'navbar navbar-expand-lg navbar-dark bg-dark fixed-top'}>
     <div className={'container-fluid'}>

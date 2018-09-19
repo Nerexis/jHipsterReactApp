@@ -1,6 +1,6 @@
 import React from 'react';
-import {Button} from "react-bootstrap";
 import AddDataSourceForm from "./add-data-source-form";
+import {Button} from "reactstrap";
 
 class AddDataSourceButton extends React.Component {
   constructor(props) {
@@ -9,18 +9,21 @@ class AddDataSourceButton extends React.Component {
       show: false
     }
 
-    this.handleShow = () => {
-      this.setState({show: true});
-    }
-    this.handleClose = () => {
-      this.setState({show: false});
-    }
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+
+  handleShow() {
+    this.setState({show: true});
+  }
+  handleClose() {
+    this.setState({show: false});
   }
 
   render() {
     return (
       <React.Fragment>
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+        <Button onClick={this.handleShow}>
           New data source
         </Button>
         <AddDataSourceForm show={this.state.show} closeCallback={this.handleClose}/>
@@ -30,5 +33,6 @@ class AddDataSourceButton extends React.Component {
   }
 
 };
+
 
 export default AddDataSourceButton;
