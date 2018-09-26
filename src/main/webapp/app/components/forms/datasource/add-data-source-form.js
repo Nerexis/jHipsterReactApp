@@ -1,6 +1,7 @@
 import React from 'react';
 import {Input, Form, FormGroup, Button, Label, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import {connect} from 'react-redux';
+
 class AddDataSourceForm extends React.Component{
   constructor(props) {
     super(props);
@@ -43,9 +44,9 @@ class AddDataSourceForm extends React.Component{
                 <Label for={'dataSourceName'}>Data source name: </Label>
                 <Input type={'text'} id={'name'} placeholder={'Data source name'} onChange={this.handleOnChange}/>
                 <Label for={'url'}>Data source URL: </Label>
-                <Input type={"text"} id={'url'} placeholder={'Data source URL'} onChange={this.handleOnChange}></Input>
+                <Input type={"text"} id={'url'} placeholder={'Data source URL'} onChange={this.handleOnChange}/>
                 <Label for={'xpath'}>Data source XPath expression: </Label>
-                <Input type={'textarea'} id={'xpath'} placeholder={'Data Source XPath expression'} onChange={this.handleOnChange}></Input>
+                <Input type={'textarea'} id={'xpath'} placeholder={'Data Source XPath expression'} onChange={this.handleOnChange}/>
               </FormGroup>
             </Form>
           </ModalBody>

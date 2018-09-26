@@ -1,15 +1,15 @@
 const initState = {
-  dataSources: [
+  data: [
     {name: 'Test', url: 'test.com', xpath: '//a'}
   ]
 };
 
-const rootReducer = (state = initState, action) => {
+const dataSourceReducer = (state = initState, action) => {
   switch (action.type) {
     case 'ADD_DATA_SOURCE': {
       return {
         ...state
-        , dataSources: [...state.dataSources, {name: action.name, url: action.url, xpath: action.xpath}]
+        , data: [...state.data, {name: action.name, url: action.url, xpath: action.xpath}]
       };
 
     }
@@ -18,9 +18,4 @@ const rootReducer = (state = initState, action) => {
   }
 };
 
-
-export default rootReducer;
-
-
-
-
+export default dataSourceReducer;

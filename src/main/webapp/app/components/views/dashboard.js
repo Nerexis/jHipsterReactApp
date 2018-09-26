@@ -30,12 +30,12 @@ class Dashboard extends React.Component {
       </React.Fragment>
     );
   };
-};
+}
 
 const mapStateToProps = (state) => {
   return {
-    dataSources: state.dataSources
+    dataSources: state.dataSourceReducer.data
   };
-}
+};
 
 export default connect(mapStateToProps)(Dashboard);
